@@ -201,6 +201,6 @@ body, html {
     opacity: 1;
   }
   100% {
-    opacity: 0.8; /* Adjust the opacity level as per your preference */
+    opacity: 0.7; /* Adjust the opacity level as per your preference */
   }
 }
