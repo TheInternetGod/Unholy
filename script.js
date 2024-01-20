@@ -73,23 +73,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createCountdownElement() {
+  // Check for existing countdown element and remove it
+  const existingCountdown = document.querySelector('.countdown');
+  if (existingCountdown) {
+    existingCountdown.remove();
+  }
+
+  // Create a fresh countdown element
   const countdownElement = document.createElement('div');
-countdownElement.classList.add('countdown');
-countdownElement.style.visibility = 'visible';
-countdownElement.style.display = 'block';
-countdownElement.textContent = '5'; // Initial countdown value
-document.body.appendChild(countdownElement);
+  countdownElement.classList.add('countdown');
+  countdownElement.style.visibility = 'visible';
+  countdownElement.style.display = 'block';
+  countdownElement.textContent = '5'; // Initial countdown value
+  document.body.appendChild(countdownElement);
   console.log('Countdown element created.');
 }
 
-
-
-  function startCountdown() {
+function startCountdown() {
   let count = 5;
   const countdownInterval = setInterval(() => {
     playBeepSound();
 
-    // Update countdown value here
+    // Update countdown value
     const countdownElement = document.querySelector('.countdown');
     countdownElement.textContent = count;
 
@@ -101,7 +106,6 @@ document.body.appendChild(countdownElement);
     count--;
   }, 1000);
 }
-
 
   function revealHackingPage() {
   window.location.href = 'hacpage.html'; // Redirect immediately
