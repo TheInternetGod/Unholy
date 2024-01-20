@@ -174,12 +174,30 @@ body, html {
 
 .magic-text {
   position: absolute;
-  bottom: 70px;
-  left: 50%;
-  z-index: 1;
+  bottom: 110px;
+  left: 43%;
   transform: translateX(-50%);
-  font-size: 18px;
+  font-family: 'Brush Script MT', cursive;
+  z-index: 1;
+  font-size: 24px;
   color: #ffffff;
+  animation: moveUpDown 2s infinite;
+}
+
+@media only screen and (max-width: 768px) {
+  .magic-text {
+    left: 33%; /* Adjust the value based on your preference */
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the value based on your preference */
+  }
 }
 
 @keyframes shakeAnimation {
