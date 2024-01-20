@@ -57,3 +57,19 @@ img {
   margin-top: 20px;
   margin-left: -10px;
  }
+
+.read-more-button {
+  display: block;
+  margin-top: 50px; /* Adjust the margin to move the button down */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #0056b3;
+}
