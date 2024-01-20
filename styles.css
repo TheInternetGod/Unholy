@@ -186,7 +186,7 @@ body, html {
 
 @media only screen and (max-width: 768px) {
   .magic-text {
-    left: 33%; /* Adjust the value based on your preference */
+    left: 33.2%; /* Adjust the value based on your preference */
     transform: translateX(-50%);
   }
 }
