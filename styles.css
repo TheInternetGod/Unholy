@@ -128,15 +128,28 @@ body, html {
 }
 
 .ghost-text {
+  font-family: 'Chiller', sans-serif;
   font-size: 30px;
-  color: #ff0000; /* Super glowing red color */
+  color: #ff0000;
   font-weight: bold;
   white-space: nowrap;
   opacity: 0;
 }
 
 .ghost-text.appear {
-  animation: ghostTextAppear 2s ease-out forwards, ghostTextGlow 1.5s infinite alternate;
+  animation: ghostTextAppear 2s ease-out forwards, ghostTextGlow 1.5s infinite alternate, pulsateGlow 1s infinite;
+}
+
+@keyframes pulsateGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 1);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  }
 }
 
 @keyframes ghostTextAppear {
@@ -158,7 +171,6 @@ body, html {
     text-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
   }
 }
-/* Your existing styles */
 
 .magic-text {
   position: absolute;
