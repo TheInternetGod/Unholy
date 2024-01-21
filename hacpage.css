@@ -15,13 +15,14 @@ body {
 
 .hacking-text {
   font-size: 24px;
-  color: #ff0000;
+  color: #00FF00;
   font-family: Helvetica;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .progress-bar-container {
+  position: relative;
   width: 80%; /* Ensure it spans the full width */
   height: 20px; /* Adjust height as needed */
   background-color: #ddd; /* Placeholder background */
@@ -32,7 +33,7 @@ body {
 .progress-bar {
   width: 0%; /* Start with 0 width */
   height: 100%; /* Fill the entire container height */
-  background-color: green; /* Green fill color */
+  background-color: Blue; /* Green fill color */
   animation: progress-fill 6s linear forwards; /* 6-second animation */
 }
 
@@ -45,6 +46,17 @@ body {
   }
 }
 
+.percentage {
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #008B8B; /* Change to your desired color */
+  position: absolute;
+  top: 0px; /* Adjust the top position to place it above the progress bar */
+  left: 50.7%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 img {
   max-width: 10%;
   height: auto;
@@ -55,22 +67,55 @@ img {
   font-size: 28px;
   color: #ff0000;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: -10px;
+  font-style: italic;
  }
+
+@keyframes flicker {
+  0% {
+    box-shadow: 0 0 5px 2px white, 0 0 10px 5px white;
+  }
+  50% {
+    box-shadow: 0 0 5px 2px transparent, 0 0 10px 5px transparent;
+  }
+  100% {
+    box-shadow: 0 0 5px 2px white, 0 0 10px 5px white;
+  }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 
 .read-more-button {
   display: block;
-  margin-top: 50px; /* Adjust the margin to move the button down */
+  margin-top: 50px;
   padding: 10px 20px;
   background-color: #007BFF;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: flicker 1s infinite, beat 1s infinite; /* Pulsating and beating effects */
 }
 
 .read-more-button:hover {
   background-color: #0056b3;
+  animation: none; /* Stop animation on hover */
 }
+
+audio {
+  opacity: 0.9;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: #56AEFF;
+}
+;
