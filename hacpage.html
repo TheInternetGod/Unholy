@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="hacpage.css">
   <title>Hacking in Progress...</title>
+  
+  <!-- Add this script in the <head> or before the closing </body> tag -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var progressBar = document.querySelector(".progress-bar");
+    var percentage = document.querySelector(".percentage");
+
+    // Set the total animation duration in milliseconds
+    var totalDuration = 6000;
+
+    // Interval to update the percentage every second
+    var updateInterval = setInterval(function() {
+      var currentTime = parseInt(window.getComputedStyle(progressBar).width);
+      var currentPercentage = (currentTime / progressBar.parentElement.clientWidth) * 100;
+      percentage.textContent = Math.round(currentPercentage) + "%";
+
+      if (currentTime >= progressBar.parentElement.clientWidth) {
+        clearInterval(updateInterval);
+      }
+    }, totalDuration / 5); // Divided by 5 for 5 intervals
+  });
+</script>
+
 </head>
 <body>
   <div class="hacking-container">
@@ -15,12 +38,14 @@
     <div class="hacking-text">Decrypting security protocols...</div>
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
+      <div class="percentage">0%</div>
     </div>
     <pre class="final-message">
     You are hacked! 
  Your secrets are safe.
 </pre>
-    <a href="readmore.html" class="read-more-button">Read More</a>
+<audio controls id="background-audio" style="width: 65%; height: 90px;"> <source src="audio/Fire.MP3" type="audio/mpeg"></audio>
+<a href="readmore.html" class="read-more-button">Read More</a>
   </div>
 </body>
 </html>
