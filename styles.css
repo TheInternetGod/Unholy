@@ -238,7 +238,7 @@ body, html {
 .countdown {
   position: absolute;
   top: 18%;
-  left: 49%;
+  left: 47%;
   transform: translateX(-50%);
   font-size: 40px;
   font-weight: bold;
