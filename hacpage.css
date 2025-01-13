@@ -67,12 +67,13 @@ img {
   font-size: 18px;
   color: #ff0000;
   font-weight: bold;
-  margin-top: 30px;
   font-style: italic;
-  text-align: center; /* Center-aligns inline text */
-  display: flex; /* Centers block text */
-  justify-content: center;
-  align-items: center;
+  text-align: center; /* Center-aligns the text */
+  line-height: 1.5; /* Ensures consistent vertical spacing */
+  display: inline-block; /* Centers the block of text more effectively */
+  padding: 10px; /* Adds symmetrical space around the text */
+  margin: 0 auto; /* Ensures horizontal centering within the parent */
+  white-space: pre; /* Keeps the formatting inside <pre> */
 }
 
 @keyframes flicker {
